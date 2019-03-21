@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="icon" href="/static/favicon.ico" sizes="48x48" type="image/ico">
+  <% for (var chunk in htmlWebpackPlugin.files.css) { %>
+    <link rel="preload" href="<%= htmlWebpackPlugin.files.css[chunk] %>"  as="style">
+  <% } %>
+  <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <link rel="preload" href="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" as="script">
+  <% } %>
+</head>
+
+<body>
+  <div id="root" class="main-container">
+    <div class="messages-wrapper">
+      <div class="header">
+        <img id="avatar" class="user-avatar" />
+        <div id="name" class="user-name"></div>
+      </div>
+      <div id="messages" class="messages"></div>
+      <div class="footer">
+        <div class="send-message">
+          <input id="content" class="content" />
+          <button id="sendBtnMessage" class="btn-send">发送消息</button>
+        </div>
+        <div class="send-file">
+          <input id="file" type="file" class="file" />
+          <button id="sendBtnFile" class="btn-send">发送文件</button>
+        </div>
+      </div>
+    </div>
+    <div id="videos" class="videos-wrapper">
+      <video id="me" autoplay class="me"></video>
+      <div id="otherVideos" class="other-videos-wrapper"></div>
+    </div>
+    <div id="notifications" class="notifications"></div>
+  </div>
+</body>
+
+</html>

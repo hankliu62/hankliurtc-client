@@ -1,0 +1,74 @@
+{
+  "root": true,
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "app.less": true
+  },
+  "plugins": [
+    "babel"
+  ],
+  "rules": {
+    "arrow-body-style": "warn",
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "func-names": "off",
+    "function-paren-newline": [
+      "error",
+      "consistent"
+    ],
+    "linebreak-style": ["off", "windows"],
+    "import/first": "off",
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": [
+          "^[~]",
+          "^engine$"
+        ]
+      }
+    ],
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "max-len": [
+      "error",
+      120
+    ],
+    "max-lines": [
+      "error",
+      {
+        "max": 500
+      }
+    ],
+    "no-console": "error",
+    "no-plusplus": "off",
+    "no-restricted-syntax": [
+      "error",
+      "WithStatement",
+      "BinaryExpression[operator='in']"
+    ],
+    "no-underscore-dangle": "off",
+    "object-curly-newline": "off",
+    "spaced-comment": [
+      "error",
+      "always",
+      {
+        "block": {
+          "exceptions": [
+            "*"
+          ]
+        }
+      }
+    ]
+  }
+}
